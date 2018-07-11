@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>人脸识别</title>
+    <link rel="stylesheet" href="/static/mdui.min.css">
+	<script src="/static/mdui.min.js"></script>
+	<script src="/static/upload.js"></script>
+    <style type="/static/text/css">
+        .mdui-container > div {
+            padding: 10px 15px;
+            border-radius: 3px;
+            margin-bottom: 8px;
+        }
+        .mdui-row > [class*="mdui-col-"] {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mdui-container">
+    	<div class="mdui-tab mdui-tab-full-width" mdui-tab>
+    		<a href="#照片存储" class="mdui-ripple">照片存储</a>
+    		<a href="#特征输出" class="mdui-ripple">特征输出</a>
+    		<a href="#同脸检测" class="mdui-ripple">同脸检测</a>
+    		<a href="#人脸筛选" class="mdui-ripple">人脸筛选</a>
+  		</div>
+  		<div id="照片存储">
+  		<div class="mdui-row">
+	<div id="preview" class="mdui-col-xs-6">
+<img class="mdui-img-rounded mdui-center mdui-m-a-5 mdui-shadow-12" src="/static/no_image.jpg" alt=""/>
+  	</div>
+  	<div class="mdui-col-xs-6">
+  		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  				<!-- <form action=""> -->
+		<input class="mdui-ripple mdui-center mdui-m-a-5" type="file" onchange="preview(this)">
+		<input onclick="upload1()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-center mdui-m-a-5 mdui-hoverable" type="button" value="上传照片" >
+		</form>
+		<form action="">
+		<div class="mdui-textfield">
+  		<input class="mdui-textfield-input" type="text" placeholder="姓名"/>
+		</div>
+		<input class="mdui-btn mdui-btn-raised mdui-ripple mdui-center mdui-m-a-5 mdui-hoverable" type="submit" value="存储照片">
+		</form>
+	</div>
+	  		</div>
+	  	</div>
+  		<div id="特征输出">
+
+<div class="mdui-row">
+  	<div  class="mdui-col-xs-12">
+		  <div id="preview2">
+				<img class="mdui-img-rounded mdui-center mdui-m-a-5 mdui-shadow-12" src="/static/no_image.jpg" alt=""/>
+		</div>
+		<form action="">
+		<input class="mdui-ripple mdui-center mdui-m-a-5" type="file" onchange="preview2(this)"> 	
+  	</div>
+</div>
+  		<div class="mdui-row">
+	<div class="mdui-col-xs-6">
+			<input onclick="upload2()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-center mdui-m-a-5 mdui-hoverable" type="button" value="上传照片">
+		</form>	
+  	</div>
+  	<div class="mdui-col-xs-6">
+  		<form action="">
+		<input class="mdui-btn mdui-btn-raised mdui-ripple mdui-center mdui-m-a-5 mdui-hoverable" type="submit" value="分析特征">
+		</form>
+	</div>
+</div>
+  		</div>
+  		<div id="同脸检测">
+  			<div class="mdui-row">
+  				<div class="mdui-col-xs-6">
+					  <div id="preview3">
+  					<img class="mdui-img-rounded mdui-center mdui-m-a-5 mdui-shadow-12" src="/static/no_image.jpg" alt=""/>
+						</div>
+					  <form action="">
+					<input class="mdui-ripple mdui-center mdui-m-a-5" type="file" onchange="preview3(this)">
+					<input class="mdui-btn mdui-btn-raised mdui-ripple mdui-center mdui-m-a-5 mdui-hoverable" type="submit" value="上传照片">
+					</form>			
+  				</div>
+				<div class="mdui-col-xs-6">
+						<div id="preview4">
+					<img class="mdui-img-rounded mdui-center mdui-m-a-5 mdui-shadow-12" src="/static/no_image.jpg" alt=""/>
+						</div>
+					<form action="">
+					<input class="mdui-ripple mdui-center mdui-m-a-5" type="file" onchange="preview4(this)">
+					<input class="mdui-btn mdui-btn-raised mdui-ripple mdui-center mdui-m-a-5 mdui-hoverable" type="submit" value="上传照片">
+					</form>	
+				</div>
+  			</div>
+  			<div class="mdui-row">
+  				<div class="mdui-col-xs-12">
+  					<button class="mdui-btn mdui-btn-raised mdui-ripple mdui-center mdui-m-a-5 mdui-hoverable">是否同脸</button>
+  				</div>
+  			</div>
+  		</div>
+  		<div id="人脸筛选">
+		  		<div class="mdui-row">
+	<div class="mdui-col-xs-6" id="preview5">
+<img class="mdui-img-rounded mdui-center mdui-m-a-5 mdui-shadow-12" src="/static/no_image.jpg" alt=""/>
+  	</div>
+  	<div class="mdui-col-xs-6">
+  		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  				<form action="">
+		<input class="mdui-ripple mdui-center mdui-m-a-5" type="file" onchange="preview5(this)">
+		<input class="mdui-btn mdui-btn-raised mdui-ripple mdui-center mdui-m-a-5 mdui-hoverable" type="submit" value="上传照片">
+		</form>
+		<form action="">
+		<div class="mdui-textfield">
+  		<input class="mdui-textfield-input" type="text" placeholder="姓名"/>
+		</div>
+		<input class="mdui-btn mdui-btn-raised mdui-ripple mdui-center mdui-m-a-5 mdui-hoverable" type="submit" value="筛选人脸">
+		</form>
+	</div>
+	  		</div>
+    </div>
+</body>
+</html>
